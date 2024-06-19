@@ -26,14 +26,11 @@ describe('[Feature] Coffees - /coffees', () => {
       imports: [
         CoffeesModule,
         TypeOrmModule.forRoot({
-          type: 'postgres',
-          host: 'localhost',
-          port: 5434,
-          username: 'postgres',
-          password: 'pass123',
-          database: 'postgres',
           autoLoadEntities: true,
           synchronize: true,
+          type: 'sqlite',
+          database: ':memory:',
+          logging: true,
         }),
       ],
     }).compile();
