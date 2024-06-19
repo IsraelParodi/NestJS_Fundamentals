@@ -22,3 +22,11 @@ services:
     environment:
       PGADMIN_DEFAULT_PASSWORD: pass123
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
+  
+  test-db:
+    image: postgres
+    restart: always
+    ports:
+      - "5434:5432" # 👈 Note the 5433 port (since we are using 5432 for our regular db)
+    environment:
+      POSTGRES_PASSWORD: pass123

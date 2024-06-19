@@ -6,7 +6,7 @@ import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 import { Flavor } from './entities/flavor.entity';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto.ts';
-import { Event } from 'src/events/entities/event.entity';
+import { Event } from '../events/entities/event.entity';
 
 @Injectable()
 export class CoffeesService {
@@ -38,7 +38,7 @@ export class CoffeesService {
     });
 
     if (!coffee) {
-      throw new NotFoundException(`Coffe #${id} not found`);
+      throw new NotFoundException(`Coffee #${id} not found`);
     }
 
     return coffee;
